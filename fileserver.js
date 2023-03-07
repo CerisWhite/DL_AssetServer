@@ -44,8 +44,8 @@ http.createServer(CertConf, (req, res) => {
 			fs.readFile(AssetPaths[i] + ("/" + URLPath[3] + "/" + URLPath[4]), (err, data) => {
 				res.writeHead(200);
 				res.end(data);
-				return;
 			});
+			return;
 		}
 		catch { continue; }
 	}
