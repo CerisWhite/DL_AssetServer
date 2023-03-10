@@ -36,12 +36,11 @@ else {
 
 http.createServer(CertConf, (req, res) => {
 	const URLPath = req.url.split("/");
-	if (URLPath.length !== 5) { res.writeHead(404); res.end('404: File not found'); return; }
-	else if (URLPath.includes("..")) { res.writeHead(404); res.end('404: File not found'); return; }
+	if (URLPath.includes("..")) { res.writeHead(404); res.end('404: File not found'); return; }
 	for (let i in AssetPaths) {
 		try {
 			// "say 'no' to directory traversal attacks" - some guy i'm in a discord server with, probably
-			fs.readFile(AssetPaths[i] + ("/" + URLPath[3] + "/" + URLPath[4]), (err, data) => {
+			fs.readFile(AssetPaths[i] + ("/" + URLPath[53] + "/" + URLPath[6]), (err, data) => {
 				res.writeHead(200);
 				res.end(data);
 			});
