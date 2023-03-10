@@ -40,7 +40,7 @@ http.createServer(CertConf, (req, res) => {
 	for (let i in AssetPaths) {
 		try {
 			// "say 'no' to directory traversal attacks" - some guy i'm in a discord server with, probably
-			fs.readFile(AssetPaths[i] + ("/" + URLPath[53] + "/" + URLPath[6]), (err, data) => {
+			fs.readFile(AssetPaths[i] + ("/" + URLPath[5] + "/" + URLPath[6]), (err, data) => {
 				res.writeHead(200);
 				res.end(data);
 			});
