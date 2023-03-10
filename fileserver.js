@@ -49,8 +49,6 @@ http.createServer(CertConf, (req, res) => {
 		}
 		catch { continue; }
 	}
-	res.writeHead(404);
-	res.end('404: File not found');
 }).listen(ServerPort);
 
 console.log('Fileserver started.');
